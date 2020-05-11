@@ -1,0 +1,18 @@
+
+install packages (new project or running first time)
+===================
+delete:
+vendor/
+
+run:
+composer install
+
+
+
+autoload
+===================
+whenever you need to autoload a new dir run...
+
+composer dump-autoload
+or it that doesn't work use:
+composer dump-autoload -o

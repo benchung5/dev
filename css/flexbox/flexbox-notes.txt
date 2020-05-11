@@ -1,0 +1,35 @@
+flexbox resrouces:
+———————————
+
+example codepen:
+http://codepen.io/anon/pen/VKxRoE?editors=1100
+
+example codepen:
+http://codepen.io/devtips/pen/JorKGm/?editors=1100
+
+strange bug:
+-max width on element inside a flex child could cause white space issues.
+
+iphone:
+if doing a column layout, don’t just use one column for example to do halves, use two columns even if one is invisible
+iphone will have alignment problems if you don’t
+
+ei bugs:
+———————————
+ensure flex children have: 
+display: inline-block;
+
+-won’t work if there is min-height on flex parent (try using padding instead)
+
+-using margin auto on flex child won’t work, 
+use align-items: centre, and justify-content: centre on flex parent 
+(or use the foundation classes for centering)… but this will not work if the flex child is absolute positioned.
+in that case use:
+
+left: 50%;
+top: 50%;
+transform: translateX(-37px) translateY(-37px);
+
+-on flex parent ensure there is a defined width (even if it’s width: 100%)
+
+-ensure a relative positioned container for an absolute positioned child has width: 100%, height: 100% for example - if it’s going to take up the full screen

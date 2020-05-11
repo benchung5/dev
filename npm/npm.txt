@@ -1,0 +1,90 @@
+navigate to your app dir then init npm:
+npm init
+this will then walk you through creawting a package.json file
+
+to start an app with no packages:
+npm install
+
+to install a module. Note that the --save is optional but it importantly 
+saves a reference to the dependancy in the package.json file:
+npm install <packagename> --save
+
+to install a moduel that is only for development 
+npm install <packagename> --save-dev
+
+npm install <packagename>@<version>
+npm install webpack@1.12.9
+
+to globally install a module (not download it to the node_modules folder but install in in
+C:\Users\Ben\AppData\Roaming\npm so all applications can use it)
+npm install -g <packagename>
+
+
+this for example:
+  "dependencies": {
+    "moment": "^2.11.2"
+  }
+  
+  the carat ^ indicates that it will auto update the patches and subversions but not
+  full versions. a tilda ~ only allows patches to update.
+  
+  
+To remove module1 without changing package.json: 
+npm uninstall module1.
+
+To uninstall global modules
+npm uninstall -g <packagename>
+
+To remove module1 with changing package.json, and removing it from the dependencies in package.json:
+npm uninstall --save module1.
+  
+-----------------------
+  
+to install express generator:
+npm install express-generator -g
+
+to start a package:
+npm start
+
+to run a script (located in the scripts area of package.json)
+npm run <scriptname>
+
+
+list all globally installed plugins
+-----------------------
+npm list -g --depth=0
+
+
+install a project from github
+-----------------------
+npm install user/repo#branch
+
+good article on how to use a forked node package:
+http://debuggable.com/posts/how-to-fork-patch-npm-modules:4e2eb9f3-e584-44be-b1a9-3db7cbdd56cb
+
+#to install latest alpha:
+-----------------------
+npm install 'gulpjs/gulp.git#4.0' --save-dev
+
+#clear npm cache:
+-----------------------
+npm cache clean
+
+#update all packages to latest version:
+-----------------------
+npm update --save
+
+#update each globally installed package (-dev causes dev packages to be updated as well):
+-----------------------
+npm update -dev --save
+
+#update each globally installed package:
+-----------------------
+npm update -g
+
+#update a single package to the latest version:
+-----------------------
+npm update <pachage-name> --save
+
+
+

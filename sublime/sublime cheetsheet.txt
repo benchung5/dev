@@ -1,0 +1,56 @@
+Sublime cheatsheet:
+
+install packages:
+shift+command+p
+search for “install”
+search for your package
+
+remove packages:
+(same as above but search for “remove”)
+
+find/edit
+f3 = jump to next occurance
+command + click = insert multiple areas to edit
+command + d (multiple times) = highlight multiple to edit
+
+multiline edit
+command + shift + l = multiline edit
+
+html edit
+control + shift + w = html wrap
+(command + shift + l) + (control + shift + w) = multiline html wrap
+command + shift + v = smart paste (proper code indenting)
+
+move/duplicate/delete lines
+command + ctrl + arrow = move line of text up and down to replace
+command + shift + d = duplicate line
+delete entire line = ctrl + k
+
+working with folders
+search files = command + p
+use the @ symbol when searching to narrow down to text inside the file
+also use @ to navigate functions in a code file if placed without anything
+use the : to jump to a particular line number
+to save a sublime project of folders combinations = project > save project as
+
+helpful for coding
+right click > show unsaved changes
+format code = edit > line > re-indent
+open the command pallets = command + shift + p
+comment out code = command + /
+
+open file with extension:
+View -> Syntax -> Open all with current extension as ...
+
+working with tabs
+-------------------------------
+close current tab
+cmd/ctrl + w
+
+switch tabs
+cmd/ctrl + tab
+
+reopen closed file
+cmd/ctrl + shift + t
+
+

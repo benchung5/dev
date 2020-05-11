@@ -1,0 +1,493 @@
+/* ==========================================================================
+transforms
+========================================================================== */
+
+div {
+    transform: rotate(90deg);
+    transform: translate(x,y);
+    transform: translateX(x);
+    transform: translateY(y);
+    transform: scale(x,y);
+}
+
+
+/* ==========================================================================
+scrolling/scrollbars
+========================================================================== */
+
+/*hide scrollbars*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+html, body {
+/*prevent scroll on iphone*/
+   height: 100%;
+   width: 100%;
+   overflow: hidden !important;
+   position: fixed !important;
+/*font smoothing*/
+   @include font-smoothing;
+}
+
+/* ==========================================================================
+line breaks
+========================================================================== */
+
+/*force line break*/
+div {
+    word-wrap: break-word;
+    /*tells the browser to break where necessary, if the above alone doesn't wordk,
+    use this with it*/
+    word-break: break-all;
+}
+
+/* ==========================================================================
+shapes
+========================================================================== */
+
+/*creating shapes in css*/
+/*  https://css-tricks.com/examples/ShapesOfCSS/  */
+
+
+/* ==========================================================================
+clearfix
+========================================================================== */
+
+
+/*creating shapes in css*/
+/*  https://css-tricks.com/examples/ShapesOfCSS/  */
+
+
+/**
+ * Clear fix------------------------------------------------------------
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* Clear Floated Elements */
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+
+/* ==========================================================================
+font smoothing
+========================================================================== */
+
+html, body {
+   /*font smoothing*/
+   @include font-smoothing;
+}
+
+/* ==========================================================================
+kill outline/border
+========================================================================== */
+
+.kill-outline {
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+/* ==========================================================================
+shadows
+========================================================================== */
+
+/*common shadows */
+.textshadow {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* offset x offsety blur colour */
+.boxshadow {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+gradient
+========================================================================== */
+
+.gradient {
+    background: #bf2525; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bf2525 7%, #7c1212 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(7%,#bf2525), color-stop(100%,#7c1212)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bf2525 7%,#7c1212 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bf2525 7%,#7c1212 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bf2525 7%,#7c1212 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bf2525 7%,#7c1212 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf2525', endColorstr='#7c1212',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+/* ==========================================================================
+background
+========================================================================== */
+
+/*multiple background images*/
+div {
+  background:  url("foreground.png") 0 0 no-repeat, url("middle-ground.png") 0 0 no-repeat, url("background.png") 0 0 no-repeat;
+}
+
+/*background size*/
+.image {
+    background: url(/img.jpg);
+    background-size: 300px 80px;
+    background-repeat: no-repeat;
+}
+
+/*multiple backgrounds*/
+#example1 {
+background-image: url (img_flwr.gif), url(paper.gif);
+background-position: right bottom, left top;
+background-repeat: no-repeat, repeat;
+}
+
+/*full page bg fixed image*/
+body {
+    background: url(../images/bg-sky.png) no-repeat center center fixed;
+    
+/*    cover screen no matter what*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+/*    for full width but auto height */
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+}
+/*for an image*/
+img {
+    height: auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+border radius
+========================================================================== */
+
+/*border radius*/
+.border-radius {
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10px; 
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+highlight color
+========================================================================== */
+
+/*change highlight colour*/
+::selection {
+	background: #7ec87e; /* Safari */
+	}
+::-moz-selection {
+	background: #7ec87e; /* Firefox */
+}
+
+/* ==========================================================================
+transitions
+========================================================================== */
+
+/*add these properties to any class that needs transition animation*/
+.transition{
+	-webkit-transition: color .3s linear; 
+    -o-transition: color .3s linear; 
+    -moz-transition: color .3s linear;
+}
+/*transition to all properties*/
+.transition-all {
+    transition: all .2s linear; 
+    -webkit-transition: all .2s linear; 
+    -moz-transition: all .2s linear; 
+    -o-transition: all .2s linear;
+}
+
+.no-transition {
+    transition: none; 
+    -webkit-transition: none; 
+    -moz-transition: none; 
+    -o-transition: none;
+}
+
+
+/*css3 media queries (respoonsive design)*/
+
+
+/* ==========================================================================
+media queries
+========================================================================== */
+
+@media (min-width: 500px) and (max-width: 100px) {
+    
+}
+
+@media (min-width: 640px) {
+	#media-queries-1 { background-color: #0f0; }
+}	
+
+@media (max-width: 2000px) {
+	#media-queries-2 { background-color: #0f0; }
+}
+
+/* ==========================================================================
+printing
+========================================================================== */
+
+  /*exclude class from printing*/
+  @media print {
+      .no-print { display: none; }
+  } 
+  /*or grab an entire custom stylesheet when printing, include this in the head (consider deferring this script)*/
+  /*<link rel="stylesheet" type="text/css" media="print" href="print.css">*/
+  
+/* ==========================================================================
+box shadow
+========================================================================== */
+
+/*use box-shadow to make double border effect-------------------------------------*/
+  .double-borders {  
+    box-shadow: 0 0 0 6px #fff, 0 0 0 12px #888;  
+} 
+
+/*or this approach for double borders */
+
+/*<div class="border">
+    Hi I have two border colors<br />
+    I am also Fluid
+</div>*/
+
+div.border {
+    border: 1px solid #000;
+    position: relative;
+}
+div.border:before {
+    position: absolute; display: block; content: '';
+    border: 1px solid red;
+    height: 100%; width: 100%;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+/*end double borders --------------------------------------------------------------*/
+
+/* ==========================================================================
+pseudo-classes
+========================================================================== */
+
+/* n is the number at each step, starting at 0 (0, 1,2,3,4) */
+/*How about the :nth-child(2n+1)?
+
+(2 x 0) + 1 = 1 = 1st Element
+(2 x 1) + 1 = 3 = 3rd Element
+(2 x 2) + 1 = 5 = 5th Element*/
+
+
+ul li:nth-child(3n+1) {  
+  color: #EBF0FD
+}
+ul li:nth-child(even) {  
+  color: #EBF0FD
+}
+ul li:nth-child(odd) {  
+  color: #EBF0FD
+}
+
+/*clear the third element*/
+.cmsi-product-feed > div:nth-child(3n):after {
+    
+}
+
+/*select the fifth child div*/
+.bubble-caption > div:nth-child(5n) {
+}
+
+/*not last child*/
+div:not(:last-child) {
+}
+
+/*not a certain class*/
+div:not(.some-class) {
+}
+
+/*last child*/
+div:last-child {
+    margin-right: 0px;
+}
+
+/*last of type*/
+div:last-of-type {
+    margin-right: 0px;
+}
+
+/*inner shadow only firefox at the moment but it's futureproofed below'*/
+.inner-shadow {
+    box-shadow:inset 0 0 10px #000000;
+    -moz-box-shadow:inset 0 0 10px #000000;
+}
+/*inner shadow for just one side*/
+.top-box {
+    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);
+}
+.left-box {
+    box-shadow: inset 7px 0 9px -7px rgba(0,0,0,0.7);
+}
+.right-box {
+    box-shadow: inset -7px 0 9px -7px rgba(0,0,0,0.7);
+}
+.bottom-box {
+    box-shadow: inset 0 -7px 9px -7px rgba(0,0,0,0.7);
+}
+
+/*emulate inner border using box shadow (no blur)
+*/.inner-border {
+    box-shadow:inset 0 0 0 10px #000000;
+    -moz-box-shadow:inset 0 0 10px #000000;
+}
+
+/* ==========================================================================
+selectors
+========================================================================== */
+
+/*select by attribute*/
+input[type="text"], input[type="password"], select {
+
+}
+
+/*"starts with" css selector
+(attribute|=startswith)
+*/
+[class|=top] {
+    background:yellow;
+}
+
+/*ajacent sibling selector*/
+/*apply the style only to the element that immediately follows it as a sibling*/
+
+.el + .elsibling {
+    background: red;
+}
+
+/* above example:
+<div>
+    <div class="el"></div>
+    <div class="elsibling">red</div>
+    <div class="elsibling"></div>
+</div>*/
+
+
+
+/* ==========================================================================
+pointer events
+========================================================================== */
+
+/*make link (anchor) unclickable, unlink anchor*/
+.active {
+   pointer-events: none;
+   cursor: default;
+}
+
+/* ==========================================================================
+centering
+========================================================================== */
+
+/*center a div of with variable width*/
+#parent{
+        width:100%;
+        text-align:center;
+    }
+#child{
+        display:inline-block;
+        margin:0 auto;
+    } 
+
+/* ==========================================================================
+border-box
+========================================================================== */
+
+/*This fixes common issues with the box model by placing the border and padding inside the box
+apply this to divs - also takes care of textarea problems nicely because you can make the width
+100%!
+*/
+textarea { 
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+        width: 100%;
+}
+
+/* ==========================================================================
+vertical align
+========================================================================== */
+
+/*vertical align using transform*/
+.align-parent {
+    /*to eliminate blurryness for "half pixel" child element for vertical align*/
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.v-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/*vertical align using table/table-cell*/
+.v-align-parent {
+    display: table;
+	/* this has to have defined height for 
+    contents to vertical align into. Cannot use min-height*/
+    height: 200px;
+    width: 100%;
+}
+.v-align {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+	float: none !important;
+}
+
+/* align radio boxes with text*/
+.price-calc input[type="radio"]{
+    vertical-align: baseline;
+}
+
+
+

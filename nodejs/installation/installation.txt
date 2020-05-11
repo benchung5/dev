@@ -1,0 +1,74 @@
+
+# installing on centOS:
+# ===============================
+
+# run the script from the node.js site:
+# https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora
+# this will download and run their bash script
+#<download> <not verbose> <jump through http redirects> <the page to get> <pipe to bash> <get from standard input instead of from file>)
+curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -
+
+#then:
+yum -y install nodejs npm
+node -v
+npm-v
+
+check it’s running on port:
+lsof -i :<the-node-port>
+
+
+# full instructions from DO article (node.js on centOS):
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-centos-7
+
+setup reverse proxy with node - apache
+https://www.youtube.com/watch?v=A3Prx_2YEm8
+
+# ssl in apache - redirect http to https
+https://www.youtube.com/watch?v=Ei-ah2ruEkM
+
+# ssl with express
+https://www.youtube.com/watch?v=8ptiZlO7ROs
+
+
+node.js on digital ocean (Ubuntu 14.04)
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
+
+important notes: 
+-instructions for sudo mv node /opt/ should be /opt/node
+-also you must restart both machines for everything to work
+
+
+# install on centos:
+# first remove:
+yum remove nodejs
+rm -f /etc/yum.repos.d/nodesource-el*
+rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node opt/local/include/node /opt/local/lib/node_modules
+# clear all mirrors:
+yum clean all
+# make:
+yum install -y gcc-c++ make
+# install version 7:
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo bash -
+yum install -y nodejs
+# check version
+node --version
+
+
+# uninstall on Ubuntu:
+# ===============================
+sudo apt-get remove nodejs
+sudo apt-get remove npm
+sudo apt-get update
+#check for any node stuff
+which node
+
+
+# install on Ubuntu using NVM:
+# ===============================
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-with-nvm-node-version-manager-on-a-vps
+
+# good setup for nodejs and and ssl on digital ocean
+# ===============================
+https://www.youtube.com/watch?v=kR06NoSzAXY
+written tutorial:
+https://code.lengstorf.com/deploy-nodejs-ssl-digitalocean/

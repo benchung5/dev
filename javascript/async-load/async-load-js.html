@@ -1,0 +1,39 @@
+<!-- put in head or before closing body tag -->
+<script>
+  var loadJS = function(url, callback, location){
+      //url is URL of external file, callback is the code
+      //to be called from the file, location is the location to 
+      //insert the <script> element
+
+      var scriptTag = document.createElement('script');
+      scriptTag.src = url;
+
+      scriptTag.onload = callback;
+      scriptTag.onreadystatechange = callback;
+
+      location.appendChild(scriptTag);
+  };
+  var onScriptLoaded = function(){
+    //your code goes here
+    console.log('callback fired');
+  }
+  loadJS('{{root}}{{paths.assets}}js/three-scene.js', onScriptLoaded, document.body);
+</script>
+
+
+<!-- or -->
+<script>
+  (function() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = 'assets/myScript.js';
+    //get the first existing script tag in the doc
+    var s = document.getElementByTagName('script')[0];
+    //insert created tag just above it
+    s.parentNode.insertBefore(script, s);
+  })();
+</script>
+
+<!-- async vs deferred, vs none
+http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html -->

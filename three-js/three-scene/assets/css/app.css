@@ -1,0 +1,43 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+#debug {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
+
+.scene-container {
+  box-sizing: border-box;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+
+  //hide at first
+  visibility: hidden;
+  opacity: 0;
+
+  z-index: 10;
+  background: #000;
+}
+
+/* ==========================================================================
+popovers
+========================================================================== */
+
+.popover {
+  position:absolute;
+  z-index: 10;
+  top: -1000px;
+  left:0; /* you should change left and top */
+}
+
+.info-card {
+  position:relative;
+  padding: 2em;
+  margin:2em;
+  max-width: 25em;
+  background: rgba(255,255,255,0.5)
+}

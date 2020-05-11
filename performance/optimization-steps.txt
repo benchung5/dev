@@ -1,0 +1,13 @@
+
+run through:
+google page speed insights
+https://tools.pingdom.com/
+lighthouse
+
+responsive image loader for react:
+https://github.com/herrstucki/responsive-loader
+
+optimizing images
+https://tinypng.com/
+imageoptim.com
+gulp imagemin

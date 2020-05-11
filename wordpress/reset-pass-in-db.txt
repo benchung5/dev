@@ -1,0 +1,6 @@
+-in phpMyAdmin
+-in the wp_users table
+-change the column user_pass by selecting the function dropdown MD5 then enter your password
+-press go (wp uses new algorithm but will fall back to md5 if it sees it's used)
+-instructions:
+https://www.wpbeginner.com/beginners-guide/how-to-reset-a-wordpress-password-from-phpmyadmin/

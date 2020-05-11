@@ -1,0 +1,30 @@
+manifest:
+====================
+help for building the manifest:
+Realfavicongenerator.net
+
+pwa with react:
+====================
+react pwa series tutorial:
+https://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-i-introduction-50679aef2b12
+
+react pwa starter projects:
+https://github.com/insin/react-hn
+https://github.com/GoogleChrome/sw-precache/tree/master/app-shell-demo
+
+-lighthouse chrome extension for testing:
+https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk
+https://github.com/GoogleChrome/lighthouse
+
+
+pwa with map box:
+====================
+service worker - map box example code (at bottom)
+https://github.com/mapbox/mapbox-gl-js/issues/4326
+
+learning:
+====================
+https://developers.google.com/web/ilt/pwa/
+
+
+

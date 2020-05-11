@@ -1,0 +1,50 @@
+All sorts of .htaccess fixes, redirects and security related settings
+https://gist.github.com/IngmarBoddington/5233521
+
+check syntax:
+http://www.htaccesscheck.com/
+
+#examples
+#---------------------------
+
+#Standard Conanical fixes
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^domain.tld
+RewriteRule (.*) http://www.domain.tld/$1 [R=301,L]
+RewriteRule ^index.php$ http://www.domain.tld/ [R=301]
+RewriteRule ^index.html$ http://www.domain.tld/ [R=301]
+
+# Ensure all URLs have a trailing slash.
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ http://www.example.com/$1/ [L,R=301]
+
+# Subdirectory as root redirect
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www.)?domain.tld$
+RewriteRule ^(/)?$ folder [L]
+
+# Temp maintenence with a whitelisted IP
+#Options +FollowSymlinks
+#RewriteEngine on
+#RewriteCond %{REQUEST_URI} !/maintenancePage.php$
+#RewriteCond %{REMOTE_HOST} !^000\.000\.000\.000
+#RewriteRule $ /maintenanc0Pagee.php [R=302,L]
+
+#301 Marketing forward
+Redirect permanent /shortcut http://www.domain.tld/file.php [R=301,L]
+
+#301 Page Moved
+Redirect permanent /newpage.php http://www.domain.tld/oldpage.php [R=301,L]
+
+#404 Page Not Found Redirect
+ErrorDocument 404 /page_not_found.ext
+
+#Ban IPs
+<Limit GET POST>
+order allow,deny
+deny from 202.090.21.1
+deny from 204.090.21.2
+allow from all
+</Limit>

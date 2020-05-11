@@ -1,0 +1,28 @@
+------------------------------------------
+INSTALLING NODE SETUP
+------------------------------------------
+
+Follow this:
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-14-04
+
+important notes: 
+-instructions for sudo mv node /opt/ should be /opt/node
+-also you must restart both machines for everything to work
+
+preview your work here:
+159.203.63.238
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

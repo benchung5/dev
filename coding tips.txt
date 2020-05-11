@@ -1,0 +1,101 @@
+-always get to the root of the problem. The further up the tree you can get the better.
+
+-keep fixed value things to markup (css/html)
+save your logic code for dynamic things
+
+-there should always be a simple way and an advanced way of doing any given task.
+Frameworks, languages and algorithms should also have a way for you to enter them using the “basics” and most problems should be solvable using the basics. Only if you can’t solve them using basics - should you try to solve things using advanced techniques.
+
+-have your mechanics working as console logs before you connect it to the moving parts
+
+-doing large amounts at a time is never possible, you can be successful at scratching away at the surface though. How do do go faster? You can’t do more at a time, you can only get faster at doing small bits at a time.
+
+type everything out that you can. It’s sets you up to understand your “chainning” brain rather than your visual brain. Cutting and pasting makes you remember how things look rather than how they work in small bits
+
+-keep code in small chunks (units) break code into separate functions that do one thing, then separate components that each do one thing and keep each component within a reasonable page of code.
+
+-whenever finishing a task, clean up after yourself. Close windows, remove unneeded logs, and temporary code.
+Tidy up the product of your task.
+
+-be forceful
+like when driving a stick shift and there's some unsurety of what gear you'r currently in, just force it into the gear you need to be at now.
+In code when working with finicky situations in aplication lifecycle, just force it into the correct state instead of trying to keep track of
+too many things. For example, instead of keeping track of which buttons are pressed, simply turn them all off before setting the current button to be active.
+
+-keep things small
+keep projects small, keep codebase small, keep each module small.
+The larger the project, the more complexity, and more overhead needed to manage the amount of code.
+
+-have a cutoff moment
+have a cutoff time in the project where no new features are added and there's just debugging. More features will introduce more bugs.
+
+-keep data freely flowing in it’s natural form. Avoid converting data into something else or adding to/ taking away from it on the fly if it’s the kind of data that updates constantly. If you’re doing this, rethink what you’re doing.
+
+-don’t ever underestimate any small task. Think it through before diving in, take it seriousely. Even very small things can not be so “obviouse” to solve.
+
+-have a defined arrangement of windows so you know where to find things. have a limit to how many windows opened at once
+
+-start from beginning to the end, not all at once, one step at at time in one direction
+
+-go as fast as possible, but slow down when hitting a concentrated area, step through each part of it and slow down until it's understood, don't skim over.
+
+-every now and then, pause and try to understand what it's doing overall. Step out and look at the big picture.
+
+-section your code off. Try to block off distractions and just work with the section you need to. This may need to be forceful.
+
+-separate your code into what is the main 'machine' you're dealing with and what is just formatting. What is just data conversion and what is the actual mechanism of importance.
+
+-everything you do in code can have a representation in the physical world. Try to construct it in you mind - what it might look like.
+
+-you don't have to worry about losing track. 1 because what you see helps you keep a mental hash of what it was doing, and 2 because once you sift out what's important, you can 'flatten out' the problem and forget about the dirty path you took to get there.
+Narrowing it down to one or tow variables on a few lines.
+
+-Once you have more than three tabs open for any given window, that's when you start to get confused. Strictly clean up after you have more than
+three tabs open.
+
+-your notepad is like an anchor for a drifting boat. You need to be able to find out where you were
+even if you think you're doing a simple task. Writting it down in a list has a sense of grounding yourself.
+No only does it provide a place to look back to when distracted, it gives you assurance that you'll be able
+to find your place again, so you can relax and not think so much about where you are. The other thing it does is
+it allows you to focus in on a specific task without being distracted by all that you have to get done. It puts on the hourse
+blinders in a way.
+
+-coding is not about exactness, or projecting entire setups, but a process of gradually building or gradually taking down. Think of it much like completing a sculpture, slowly chipping away at the peices until it's done. Except coding is never done...
+
+steps for debugging:
+==========
+
+-look at flattened output (chrome dev tools element view)
+-look at code stepping through order of actions
+-insert mock dependency
+-remove components dependencies one by one to narrow down problem
+
+-try to approach a problem with as many diffrent points of view - as many different angles of attach as possible. Solving problems is a combinations of stepping back and reflecting as well as active attempts at different angeles until you eventually narrow down what the problem is.
+
+-don’t be afraid to dig when you need to if you need more information, dig out the information you need to see the environment, see how the code works, then dig deeper when you know what area for sure is causing it.
+
+-reading through code:
+pretend you will be implimenting it yourself step by step as you try to understand it
+
+-know how to prune away.
+When in a situation that promotes you to confusion, know how to prune away the unnessecary variables so you can just consentrate on a small, simple and narrowed in piece that is the focus of the problem. This way even the most complex problems can be solved by not being a "genius" but by being a simple minded person that knows how to clean up the access distractions of a situation before trying to solve it.
+
+-dig into your code form one place to another, then in you mind, flatten out (like in photoshop flatten layers)
+so you don't have to keep track of all has led you to that point. Jeep a breadcrumb trail of where you are.
+Perhaps the trick to leaving a breadcrump trail is concentrating on the thing/place that you currently are rather
+than trying to remember where you were. The context will reveal it's self if you focus on where you are.
+
+-one clue that code is good is that it looks good. Like chess, if the board looks organized that means that
+your technique is good and your peices are protected. In the same way, if code looks organized and easy to read and understand,
+you can be pretty sure that the functinallity is correct too. Messy code where you have a hard time understanding how it works
+is almost guaranteed to be buggy.
+
+-never look at code in it's entirety. Always look at it in it's indavidual parts. this does not usually jive with visual organization because
+they placement of the parts aren't organized in a visual way, so you have to think of it blindly.
+When building, build the components part at a time, then building other parts that may overlap ontop, in-between or below the first.
+When debuggin, disect the code part at a time, this may involve navigating to many different files.
+When working with existing code, change each part one at a time according to it's component, not it's placement in order in a file, etc.
+This requires a visual diagram in your head that doesn't correspond to what is seen on the screen.
+True you think of one thing at a time, but the one thing at a time isn't a chunk of code for example that has 3 things mixed in. The one thing could be openning tags that contain other
+code or peices of code scattered in a file or throughout other files.
+You need let this diagram in your head lead over your visual instincts.

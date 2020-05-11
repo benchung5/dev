@@ -1,0 +1,55 @@
+#config:
+------------------------------------------
+
+#apache config file on Ubuntu:
+/etc/apache2/
+apache2.conf
+
+#apache config file on CentOS:
+/etc/httpd/conf/httpd.conf
+
+#troubleshooting uploading files:
+------------------------------------------
+# in php.ini:
+
+# directory where PHP stores temporary files while uploading.
+# use sys_get_temp_dir() in php to get this path if needed 
+upload_tmp_dir =/tmp
+
+# If defined this limits PHP read/write rights to specified path and its subdirectories. 
+# Ensure that upload_tmp_dir is inside this path.
+open_basedir
+
+#Define the largest POST message size you'd use during upload
+# example to to upload 20 mbyte files:
+post_max_size = 21M
+
+# specifies biggest file that can be uploaded
+upload_max_filesize = 24M
+
+# the maximum amount of memory a script may consume. 
+# It can't be lower than upload size.
+memory_limit = 128M
+
+# Ensure that you're checking the right php.ini file that is one used by PHP on your webserver. 
+# find it in php using php_ini_loaded_file()
+
+# check what user php runs as. Sometimes it is apache, but sometimes it can be root. Check that this user has rights for reading and writing in the temporary directory and directory that you're uploading into. In php you can do: $username = posix_getpwuid(posix_geteuid())['name'];
+(posix_geteuid gets the current use account and posix_getpwuid gets the user name)
+Check all directories in the path in case you're uploading into subdirectory (for example /dir1/dir2/-check both dir1 and dir2.
+
+# ** If you make any changes in php.ini remember to restart server so the configuration will be reloaded.
+
+#adjusting settings per domain:
+------------------------------------------
+
+<Directory /path/to/vhosts/example.com/httpdocs>
+php_admin_value upload_tmp_dir /tmp
+</Directory>
+
+#adjusting settings via .htaccess:
+------------------------------------------
+
+htaccess file:
+php_value post_max_size 16M
+php_value upload_max_filesize 6M
