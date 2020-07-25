@@ -1,4 +1,8 @@
 
+download composer
+===================
+https://getcomposer.org/download/
+
 install packages (new project or running first time)
 ===================
 delete:

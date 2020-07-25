@@ -1,23 +1,20 @@
+//IE9/10 polyfill custom event
+//note: detail property of the event can be any object but they are read only, 
+//i.e they can be set only when they the event is created
+export function CustomEvent ( event, params ) {
+	params = params || { bubbles: false, cancelable: false, detail: undefined };
+	var evt = document.createEvent( 'CustomEvent' );
+	evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+	return evt;
+}
+CustomEvent.prototype = window.Event.prototype;
 
 
-//create custom event
+//dispatch the event
+this.plantListEvent = CustomEvent('plantListUpdated');
+window.dispatchEvent(this.plantListEvent);
 
-//some params to pass
-var slideChangedParams =  { bubbles: false, cancelable: false, detail: { prevSlide: 0, currentSlide: 1 } };
-
-var SlideChangedEvent = CustomEvent("slideComplete", slideChangedParams);
-
-
-
-setTimeout(function() {
-  //later.. dispatch the event
-  window.dispatchEvent(SlideChangedEvent);
-}, 500);
-
-
-//listen
-window.addEventListener('slideComplete', function(e) {
-  //do something
-  console.log('called: ', e);
-  console.log(e.detail.currentSlide);
+//listen for the event
+window.addEventListener('plantListUpdated', function(e) {
+  console.log(e);
 });

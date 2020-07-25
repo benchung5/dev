@@ -1,7 +1,11 @@
-location of httpd.conf:
+mac location of httpd.conf:
 Applications/XAMPP/xamppfiles/etc/httpd.conf
+
+windows location of httpd.conf:
+C:\xampp\apache\conf
 
 change document root:
 DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs/1pix_app"
 <Directory "/Applications/XAMPP/xamppfiles/htdocs/1pix_app">
+
 ...restart apache
