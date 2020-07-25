@@ -38,7 +38,7 @@
     "express": "^4.13.4",
     "express-react-views": "^0.10.2",
     "express-validator": "^2.20.10",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.19",
     "pg": "^6.0.2",
     "pg-hstore": "^2.3.2",
     "react": "^0.14.3",
