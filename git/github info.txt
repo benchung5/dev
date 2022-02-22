@@ -273,3 +273,14 @@ config.json
 # IntelliJ
 *.iml
 /.idea
+
+case sensitivity
+——————
+by default, git ignores case in file names, so if you change your caps,
+run the below, then do your regular add, commit, and push, and the file names will
+persist to your repo.
+
+git config --local core.ignorecase false
+
+#or on windows
+git config core.ignorecase false

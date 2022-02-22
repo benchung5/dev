@@ -20,3 +20,30 @@ whenever you need to autoload a new dir run...
 composer dump-autoload
 or it that doesn't work use:
 composer dump-autoload -o
+
+
+update composer
+===================
+php composer.phar self-update
+
+update to a certain version:
+php composer.phar self-update 1.6.3
+
+autoload
+===================
+in composer.json...
+psr-4 is the most common and probably best type of autolaoding.
+in this example, the Lib\Validation namespace maps to the folder lib/validation
+if you require a class from this namespace like Lib\Validation\Validation_rule, composer
+will look for the file lib/validation/Validation_rule.php with the class name in it: Validation_rule.
+Need to capitalize the file name to let composer match it to the class name.
+You don't have to match the folder structure to the namespace structure when using
+psr-4 so you can map Lib\Validation to just lib if you want.
+
+{
+	"autoload": {
+		"psr-4": {
+			"Lib\\Validation\\": "lib/validation"
+		}
+	},
+}

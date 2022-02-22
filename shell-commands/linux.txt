@@ -2,3 +2,10 @@
 cat /etc/*release
 #or for other details
 uname -a
+
+// updates the package lists for upgrades for packages that need upgrading
+sudo apt update
+
+// An update must be performed first so that apt-get knows that new versions of packages are available.
+
+sudo apt upgrade
