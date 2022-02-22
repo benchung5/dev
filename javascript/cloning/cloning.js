@@ -4,21 +4,19 @@ JSON.stringify
 
 //deep clone using JSON.parse with JSON.stringify
 //but will only work if there are no functions wihin the object
-var clone = parse(JSON.stringify(objectToClone));
-
-//important to error handle when using JSON.parse...
-function parse(str) {
-	try {
-		return JSON.parse(str);
-	}
-	catch(e) {
-		return false;
-	}
+function clone(objectToClone) {
+  let clonedObject = JSON.stringify(objectToClone);
+  try {
+    return JSON.parse(clonedObject);
+  }
+  catch(e) {
+    return false;
+  }
 }
 
-console.log(parse('a'));
+console.log(clone('a'));
 //false (not an object)
-console.log(parse('{ "name": "bob" }'));
+console.log(clone('{ "name": "bob" }'));
 //{ name: "bob" }
 
 /* ==========================================================================

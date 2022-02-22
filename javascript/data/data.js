@@ -46,3 +46,10 @@ document.querySelector('s').data('hi')('Pythagoras');
 console.log('when key is not set = ',document.querySelector('t').data('all_e'));
 document.querySelector('n').data('all_e',undefined);
 console.log('all_e after removal = ',document.querySelector('n').data('all_e'));
+
+
+
+
+
+For example: 
+element.dataset.example = null is converted into data-example="null".
